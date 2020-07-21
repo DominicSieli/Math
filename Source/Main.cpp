@@ -1,14 +1,7 @@
 #include <iostream>
 
 #include "Math.h"
-
-#define Linux
-
-#ifdef Linux
-#define CLEAR "clear"
-#else
-#define Clear "cls"
-#endif
+#include "System_Commands.h"
 
 int main()
 {
