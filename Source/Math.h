@@ -15,17 +15,16 @@ namespace Math
 		return power;
 	}
 
-	template <typename T>
-	inline T Factorial(T number)
+	unsigned long long Factorial(unsigned int n)
 	{
-		T factorial = number;
-
-		for (unsigned int i = number; i > 1; i--)
+		if (n > 1)
 		{
-			factorial += factorial * (number - i);
+			return n * Factorial(n - 1);
 		}
-
-		return factorial;
+		else
+		{
+			return 1;
+		}
 	}
 
 	template <typename T>
