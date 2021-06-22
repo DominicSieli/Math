@@ -2,53 +2,24 @@
 
 namespace Math
 {
-	template <typename T>
-	inline T Power(T base, T exponent)
+	int Power(int b, int e)
 	{
-		T power = 1;
-
-		for (unsigned int i = 0; i < exponent; i++)
-		{
-			power *= base;
-		}
-
-		return power;
+		int p = 1;
+		for(int i = 0; i < e; i++) p *= b;
+		return p;
 	}
 
-	unsigned long long Factorial(unsigned int n)
+	int Logarithm(int b, int p)
 	{
-		if (n > 1)
-		{
-			return n * Factorial(n - 1);
-		}
-		else
-		{
-			return 1;
-		}
+		int e = 0;
+		while(Power(b, e) < p) e++;
+		return e;
 	}
 
-	template <typename T>
-	inline T Logarithm(T base, T power)
+	int Summation(int start, int stop, int e = 1)
 	{
-		T exponent = 0;
-
-		while (Power(base, exponent) < power)
-		{
-			exponent++;
-		}
-
-		return exponent;
-	}
-
-	inline unsigned int Summation(unsigned int indexStart, unsigned int indexStop, int exponent = 1)
-	{
-		unsigned int sum = 0;
-
-		for (unsigned int index = indexStart; index < indexStop + 1; index++)
-		{
-			sum += Power<unsigned int>(index, exponent);
-		}
-
-		return sum;
+		unsigned int s = 0;
+		for(int i = start; i < stop + 1; i++) s += Power(i, e);
+		return s;
 	}
 }
